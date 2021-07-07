@@ -12,24 +12,11 @@
 - Access to a Container Image Repository (docker.io, quay.io, harbor)
 - Make binary  → `sudo apt install make`
 
-**Step: 1.1:** Run the below commands to get the required go packages:
+**Step: 1.1:** Run go-pack.sh script to install necessary go packages
 
 ```
-go get [github.com/onsi/ginkgo@v1.11.0](http://github.com/onsi/ginkgo@v1.11.0) 
-go get [github.com/onsi/gomega@v1.8.1](http://github.com/onsi/gomega@v1.8.1) 
-go get github.com/go-logr/logr@v0.3.0
-go get github.com/vmware/govmomi
-go get github.com/vmware/govmomi/find
-go get github.com/vmware/govmomi/property
-go get [github.com/vmware/govmomi/view](http://github.com/vmware/govmomi/view) 
-go get [github.com/vmware/govmomi/vim25](http://github.com/vmware/govmomi/vim25) 
-go get [github.com/vmware/govmomi/vim25/mo](http://github.com/vmware/govmomi/vim25/mo) 
-go get [github.com/vmware/govmomi/session/cache](http://github.com/vmware/govmomi/session/cache) 
-go get [github.com/vmware/govmomi/vim25/soap](http://github.com/vmware/govmomi/vim25/soap) 
-go get [github.com/google/uuid](http://github.com/google/uuid) 
-go get [k8s.io/client-go/plugin/pkg/client/auth](http://k8s.io/client-go/plugin/pkg/client/auth)
+./ go-pack.sh
 ```
-
 **Step 2:** Get the **vKubeViewer** operator to your desktop
 
 ```
@@ -94,7 +81,7 @@ k8s-worker-1   k8s-worker-01
 
 ```
 cd ../..
-make manager 
+make build 
 ```
 
 This should have build the manager binary in bin/manager. Before running the manager in standalone code, we need to set three environmental variables to allow us to connect to the vCenter Server. They are:
